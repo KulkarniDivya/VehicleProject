@@ -44,8 +44,8 @@ public class MainUI {
 				
 			break;
 			case 2: v = service.validityCheck(v.getVehicleNo());
-				System.out.println("your insurance expires on "+v.getLastDate());
-				System.out.println(v.getNoOfDays()+" days left for renewal");
+				System.out.println("your insurance expires on "+v.getLastDate()); //Expiry date
+				System.out.println(v.getNoOfDays()+" days left for renewal"); //No.of days left
 			break;
 			case 3:System.out.println("Thank You");
 				System.exit(0);
@@ -53,6 +53,8 @@ public class MainUI {
 			}
 		}
 	}
+	
+	//Method to take inputs from user for vehicle registering
 	private static void setInfo() {
 		// TODO Auto-generated method stub
 		System.out.println("Enter the vehicle no");

@@ -19,14 +19,14 @@ class VehicleDaoImplTest {
 		vehicle = new VehicleDaoImpl();
 		v = new Vehicle();
 	}
-	@Test
+	@Test //testing register()
 	void testRegister() {
 		v.setVehicleNo(1);
 		v.setVehicleType("2 Wheelers");
 		v.setInsurancePeriod(3);
 		v.setAadhaarNo(123412341234L);
 		v.setMobileNo(9876543210L);
-		v.setDateOfRegistration(Date.valueOf(LocalDate.now()));
+		v.setDateOfRegistration(Date.valueOf(LocalDate.now()));//Setting values for vehicle object
 		assertEquals(1, vehicle.register(v));
 	}
 
@@ -37,12 +37,10 @@ class VehicleDaoImplTest {
 		v.setInsurancePeriod(3);
 		v.setAadhaarNo(123412341234L);
 		v.setMobileNo(9876543210L);
-		v.setDateOfRegistration(Date.valueOf(LocalDate.now()));
-		v.setLastDate("15/03/2022");
-		v.setNoOfDays(1095);
-		vehicle.register(v);
-		Vehicle v1 = vehicle.validityCheck(1);
-		assertEquals(1095, v1.getNoOfDays());
+		v.setDateOfRegistration(Date.valueOf(LocalDate.now()));//Setting values for vehicle object
+		vehicle.register(v);//calling register()
+		Vehicle v1 = vehicle.validityCheck(1);//calling validityCheck()
+		assertEquals(1095, v1.getNoOfDays());//Checking if no.of days returned by validityCheck() is 1095 or not
 	}
 
 }
